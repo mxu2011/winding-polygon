@@ -6,12 +6,17 @@ require 'winding-polygon/version'
 Gem::Specification.new do |gem|
   gem.name          = "winding-polygon"
   gem.version       = Winding::Polygon::VERSION
-  gem.authors       = ["TODO: Write your name"]
-  gem.email         = ["TODO: Write your email address"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.authors       = ["Martin Xu"]
+  gem.email         = ["mxu2008@gmail.com"]
+  gem.description   = %q{Use Bentley-Ottmann algorithm to solve self-intersecting polygon issue }
+  gem.summary       = %q{Detect intersecting points and decompose it into multi-polygons}
   gem.homepage      = ""
   gem.license       = "MIT"
+
+  gem.add_development_dependency "rspec", "~> 2.6"
+  gem.add_development_dependency "avl_tree"
+  gem.add_development_dependency "georuby"
+
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
