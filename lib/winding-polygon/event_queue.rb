@@ -12,16 +12,16 @@ class EventQueue
 
       a = 2*i
       b = 2*i+1
-      @events[a] = {:edge=>i};
-      @events[b] = {:edge=>i};
-      @events[a][:vertex] = polygon.vertices[i];
-      @events[b][:vertex] = polygon.vertices[i+1];
+      @events[a] = {:edge=>i}
+      @events[b] = {:edge=>i}
+      @events[a][:vertex] = polygon.vertices[i]
+      @events[b][:vertex] = polygon.vertices[i+1]
       if @events[a][:vertex].compare(@events[b][:vertex]) < 0
-        @events[a][:type] = 'left';
-        @events[b][:type] = 'right';
+        @events[a][:type] = 'left'
+        @events[b][:type] = 'right'
       else
-        @events[a][:type] = 'right';
-        @events[b][:type] = 'left';
+        @events[a][:type] = 'right'
+        @events[b][:type] = 'left'
       end
     end
   end
