@@ -4,7 +4,7 @@ class EventQueue
     #last vertex in geojson is equal to first vertex
     @individual_vertices = polygon.vertices.length - 1
     #2 per edge - last event looping back to 0 is handled by +1 below
-    @number_of_events =   2 * (individual_vertices)
+    @number_of_events =   2 * (@individual_vertices)
     @events = []
 
     #build up 2 'events' per edge. One for left vertex, one for right.
