@@ -10,6 +10,7 @@ class Point
 
   # Determines the xy lexicographical order of two points
   def compare other_point
+    raise Exception.new("Self is x=#{@x},y=#{@y}, the other_point is nil") if other_point.nil?
     # x-coord first
     return  1 if (@x > other_point.x)
     return -1 if (@x < other_point.x)

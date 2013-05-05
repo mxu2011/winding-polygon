@@ -1,4 +1,7 @@
 class EventQueue
+  attr_reader :number_of_events
+  attr_reader :events
+  attr_reader :individual_vertices
 
   def initialize(polygon)
     #last vertex in geojson is equal to first vertex
@@ -8,8 +11,7 @@ class EventQueue
     @events = []
 
     #build up 2 'events' per edge. One for left vertex, one for right.
-    for i in 0..@individual_vertices
-
+    for i in 0..@individual_vertices-1
       a = 2*i
       b = 2*i+1
       @events[a] = {:edge=>i}
