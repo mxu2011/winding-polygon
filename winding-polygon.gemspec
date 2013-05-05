@@ -5,7 +5,7 @@ require 'winding-polygon/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "winding-polygon"
-  gem.version       = Winding::Polygon::VERSION
+  gem.version       = WindingPolygon::VERSION
   gem.authors       = ["Martin Xu"]
   gem.email         = ["mxu2008@gmail.com"]
   gem.description   = %q{Use Bentley-Ottmann algorithm to solve self-intersecting polygon issue }
