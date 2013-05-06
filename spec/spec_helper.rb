@@ -1,3 +1,4 @@
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 $LOAD_PATH.unshift File.expand_path('../../lib/winding-polygon', __FILE__)
 #Dir["../../lib/winding-polygon/*.rb"].each {|file| require file }
 require 'avltree.rb'
