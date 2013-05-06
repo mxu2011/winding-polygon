@@ -19,6 +19,14 @@ class Segment
     return 0
   end
 
+  def <(other_segment)
+    @left_point.y < other_segment.left_point.y
+  end
+
+  def >(other_segment)
+    @left_point.y > other_segment.left_point.y
+  end
+
   def to_s
     return "edge:#{@edge.to_s}"
   end

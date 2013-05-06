@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.license       = "MIT"
 
   gem.add_development_dependency "rspec", "~> 2.6"
-  gem.add_development_dependency "avl_tree"
+  gem.add_development_dependency "test-unit"
 
   #gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

@@ -3,7 +3,7 @@ class SweepLine
   attr_reader :polygon
 
   def initialize(polygon)
-    @tree    = RedBlackTree.new
+    @tree    = AVLTree.new
     @polygon = polygon
   end
 
@@ -11,7 +11,7 @@ class SweepLine
   # Units are segments or distinct edges of the polygon.
   def add(event)
     # build up segment data
-    var seg = Segment.new(event)
+    seg = Segment.new(event)
     p1 = @polygon.vertices[seg.edge]
     p2 = @polygon.vertices[seg.edge + 1]
 
@@ -28,17 +28,17 @@ class SweepLine
 
     # Add node to tree and setup linkages to "above" and "below"
     # edges as per algorithm
-    nd = @tree.add(seg)
+    nd = @tree.insert(seg)
 
-    nx =
-    np =
+    nx = nd.next
+    np = nd.prev
 
-    if @tree.findNext(nd.value)
+    if !nx.nil?
       seg.above = nx
       seg.above.below = seg
     end
 
-    if @tree.findPrevious(nd.value)
+    if !np.nil?
       seg.below = np
       seg.below.above = seg
     end

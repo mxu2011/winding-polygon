@@ -20,7 +20,7 @@ class Point
     return -1 if (@y < other_point.y)
 
     # they are the same point
-    return 0;
+    return 0
   end
 
   # tests if point is Left|On|Right of the line P0 to P1.
