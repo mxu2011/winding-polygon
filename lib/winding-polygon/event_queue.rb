@@ -26,6 +26,9 @@ class EventQueue
         @events[b][:type] = 'left'
       end
     end
+
+    # sort events lexicographically
+    @events.sort!{|a,b| a[:vertex].compare(b[:vertex])}
   end
 
 end

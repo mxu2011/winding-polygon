@@ -12,12 +12,12 @@ class Point
   def compare other_point
     raise Exception.new("Self is x=#{@x},y=#{@y}, the other_point is nil") if other_point.nil?
     # x-coord first
-    return  1 if (@x > other_point.x)
-    return -1 if (@x < other_point.x)
+    return  1 if @x > other_point.x
+    return -1 if @x < other_point.x
 
     # y-coord second
-    return  1 if (@y > other_point.y)
-    return -1 if (@y < other_point.y)
+    return  1 if @y > other_point.y
+    return -1 if @y < other_point.y
 
     # they are the same point
     return 0
