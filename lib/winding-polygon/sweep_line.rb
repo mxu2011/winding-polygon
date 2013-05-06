@@ -33,12 +33,12 @@ class SweepLine
     nx =
     np =
 
-    if @tree.findNext(nd._value)
+    if @tree.findNext(nd.value)
       seg.above = nx
       seg.above.below = seg
     end
 
-    if @tree.findPrevious(nd._value)
+    if @tree.findPrevious(nd.value)
       seg.below = np
       seg.below.above = seg
     end
