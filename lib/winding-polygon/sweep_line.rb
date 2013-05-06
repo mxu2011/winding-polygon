@@ -34,12 +34,12 @@ class SweepLine
     np = nd.prev
 
     if !nx.nil?
-      seg.above = nx
+      seg.above = nx.value
       seg.above.below = seg
     end
 
     if !np.nil?
-      seg.below = np
+      seg.below = np.value
       seg.below.above = seg
     end
     return seg
@@ -48,7 +48,7 @@ class SweepLine
 
   def find(event)
     # need a segment to find it in the tree
-    seg = Segmen.new(evet)
+    seg = Segment.new(event)
     p1 = @polygon.vertices[seg.edge]
     p2 = @polygon.vertices[seg.edge + 1]
 
@@ -62,7 +62,7 @@ class SweepLine
       seg.right_point = p1
     end
 
-    @tree.find(seg)
+    @tree.search(seg)
   end
 
   def remove(seg)
