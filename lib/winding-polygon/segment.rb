@@ -20,11 +20,19 @@ class Segment
   end
 
   def <(other_segment)
-    @left_point.y < other_segment.left_point.y
+    return true if @left_point.y < other_segment.left_point.y
+    return true if @left_point.y == other_segment.left_point.y && @left_point.x < other_segment.left_point.x
+    return false
   end
 
   def >(other_segment)
-    @left_point.y > other_segment.left_point.y
+    return true if @left_point.y > other_segment.left_point.y
+    return true if @left_point.y == other_segment.left_point.y && @left_point.x > other_segment.left_point.x
+    return false
+  end
+
+  def == (other_segment)
+    @edge == other_segment.edge && @left_point == other_segment.left_point && @right_point == other_segment.right_point
   end
 
   def to_s

@@ -14,7 +14,9 @@ describe "SweepLine" do
         event = event_queue.events.pop
     end
 
-    sweep_line.find({:edge=>1}).should_not be_nil
-
+    for i in 0..3  do
+      sweep_line.find({:edge=>i}).should_not be_nil
     end
+
+  end
 end
