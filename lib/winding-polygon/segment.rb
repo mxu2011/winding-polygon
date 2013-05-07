@@ -31,4 +31,19 @@ class Segment
     return "edge:#{@edge.to_s}"
   end
 
+  def intersection_point_with(other_segment)
+    numerator = (other_segment.left_point.y - @left_point.y) * (other_segment.left_point.x - other_segment.right_point.x) -
+        (other_segment.left_point.y - other_segment.right_point.y) * (other_segment.left_point.x - @left_point.x)
+
+    denominator = (@right_point.y - @left_point.y) * (other_segment.left_point.x - other_segment.right_point.x) -
+        (other_segment.left_point.y - other_segment.right_point.y) * (@right_point.x - @left_point.x)
+
+    t = numerator.to_f / denominator
+
+    x = @left_point.x + t * (@right_point.x - @left_point.x)
+    y = @left_point.y + t * (@right_point.y - @left_point.y)
+
+    Point.new(x, y)
+  end
+
 end
