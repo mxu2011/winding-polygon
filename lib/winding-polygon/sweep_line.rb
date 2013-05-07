@@ -7,8 +7,6 @@ class SweepLine
     @polygon = polygon
   end
 
-  # Add Algorithm 'event' (more like unit of analysis) to queue
-  # Units are segments or distinct edges of the polygon.
   def add(event)
     # build up segment data
     seg = Segment.new(event)

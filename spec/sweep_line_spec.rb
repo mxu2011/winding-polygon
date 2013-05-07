@@ -10,7 +10,7 @@ describe "SweepLine" do
 
     event = event_queue.events.pop
     while !event.nil?
-        sweep_line.add(event)
+        sweep_line.add(event) if event[:type]=='left'
         event = event_queue.events.pop
     end
 
