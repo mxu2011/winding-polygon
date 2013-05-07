@@ -64,16 +64,16 @@ class SweepLine
   end
 
   def remove(seg)
-    nd = @tree.find(seg)
+    nd = @tree.search(seg)
     return if nd.nil?
 
-    nx = @tree.findNext(nd)
-    nx.below = seg.below if !nx.nil?
+    nx = nd.next
+    nx.value.below = seg.below if !nx.nil?
 
-    np = @tree.findPrevious(nd)
-    np.above = seg.above if !np.nil?
+    np = nd.prev
+    np.value.above = seg.above if !np.nil?
 
-    @tree.remove(seg)
+    @tree.delete(seg)
   end
 
   #test intersect of 2 segments and return: false=none, true=intersect
