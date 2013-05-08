@@ -16,12 +16,13 @@ class Polygon
 
       if e[:type] == 'left'
         s = sweep_line.add(e)
+
         return false  if sweep_line.intersect(s, s.above)
         return false  if sweep_line.intersect(s, s.below)
       else
         s = sweep_line.find(e)
-        return false if sweep_line.intersect(s.value.above, s.value.below)
-        sweep_line.remove(s.value)
+        return false if sweep_line.intersect(s.above, s.below)
+        sweep_line.remove(s)
       end
 
       e = event_queue.events.shift

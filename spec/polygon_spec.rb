@@ -14,7 +14,7 @@ describe "Polygon" do
 
   it 'test is polygon simple 1' do
 
-    points = JSON.parse("[[100.0, 0.0], [101.0, 0.0], [101.0, 1.0], [100.0, 1.0], [100.000001, 0.000001]]")
+    points = JSON.parse("[[100.0, 0.0], [101.0, 0.0], [101.0, 1.0], [100.0, 1.0], [100.0, 0.0]]")
     polygon = Polygon.new(points.map{|item| Point.new(item[0],item[1])})
 
     polygon.is_simple.should == true

@@ -60,7 +60,11 @@ class SweepLine
       seg.right_point = p1
     end
 
-    @tree.search(seg)
+    node = @tree.search(seg)
+
+    return nil if node.nil?
+
+    node.value
   end
 
   def remove(seg)
@@ -86,7 +90,8 @@ class SweepLine
     e2 = s2.edge
 
     # no non-simple intersect since consecutive
-    return false if (((e1+1)%@polygon.vertices.length === e2) || (e1 === (e2+1)%@polygon.vertices.length))
+    polygon_edges = @polygon.vertices.length-1
+    return false if (((e1+1)%polygon_edges === e2) || (e1 === (e2+1)%polygon_edges))
 
 
     #test for existence of an intersect point
